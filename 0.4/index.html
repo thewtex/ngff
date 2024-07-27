@@ -5,12 +5,11 @@
   <title>Next-generation file formats (NGFF)</title>
   <meta content="w3c/CG-FINAL" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-final" rel="stylesheet">
-  <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
-  <meta content="Bikeshed version b0de3432c, updated Thu Oct 13 09:16:59 2022 -0700" name="generator">
+  <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://ngff.openmicroscopy.org/0.4/" rel="canonical">
-  <meta content="449fbca8a9d3fa7489e2e24039dc15a26ab3338d" name="document-revision">
-<style>/* style-autolinks */
-
+  <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
+  <meta content="fc65eb3dfea374a9f8c6de829a50edc764ae7644" name="document-revision">
+<style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -70,8 +69,17 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
-<style>/* style-colors */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --selflink-text: black;
+        --selflink-bg: silver;
+        --selflink-hover-text: white;
+    }
+}
+</style>
+<style>/* Boilerplate: style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
 :root {
@@ -179,9 +187,121 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
-<style>/* style-counters */
+}
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: black;
+
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
+        --logo-bg: #1a5e9a;
+        --logo-active-bg: #c00;
+        --logo-text: white;
+
+        --tocnav-normal-text: #999;
+        --tocnav-normal-bg: var(--bg);
+        --tocnav-hover-text: var(--tocnav-normal-text);
+        --tocnav-hover-bg: #080808;
+        --tocnav-active-text: #f44;
+        --tocnav-active-bg: var(--tocnav-normal-bg);
+
+        --tocsidebar-text: var(--text);
+        --tocsidebar-bg: #080808;
+        --tocsidebar-shadow: rgba(255,255,255,.1);
+        --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+        --toclink-text: var(--text);
+        --toclink-underline: #6af;
+        --toclink-visited-text: var(--toclink-text);
+        --toclink-visited-underline: #054572;
+
+        --heading-text: #8af;
+
+        --hr-text: var(--text);
+
+        --algo-border: #456;
+
+        --del-text: #f44;
+        --del-bg: transparent;
+        --ins-text: #4a4;
+        --ins-bg: transparent;
+
+        --a-normal-text: #6af;
+        --a-normal-underline: #555;
+        --a-visited-text: var(--a-normal-text);
+        --a-visited-underline: var(--a-normal-underline);
+        --a-hover-bg: rgba(25%, 25%, 25%, .2);
+        --a-active-text: #f44;
+        --a-active-underline: var(--a-active-text);
+
+        --borderedblock-bg: rgba(255, 255, 255, .05);
+
+        --blockquote-border: silver;
+        --blockquote-bg: var(--borderedblock-bg);
+        --blockquote-text: currentcolor;
+
+        --issue-border: #e05252;
+        --issue-bg: var(--borderedblock-bg);
+        --issue-text: var(--text);
+        --issueheading-text: hsl(0deg, 70%, 70%);
+
+        --example-border: hsl(50deg, 90%, 60%);
+        --example-bg: var(--borderedblock-bg);
+        --example-text: var(--text);
+        --exampleheading-text: hsl(50deg, 70%, 70%);
+
+        --note-border: hsl(120deg, 100%, 35%);
+        --note-bg: var(--borderedblock-bg);
+        --note-text: var(--text);
+        --noteheading-text: hsl(120, 70%, 70%);
+        --notesummary-underline: silver;
+
+        --assertion-border: #444;
+        --assertion-bg: var(--borderedblock-bg);
+        --assertion-text: var(--text);
+
+        --advisement-border: orange;
+        --advisement-bg: #222218;
+        --advisement-text: var(--text);
+        --advisementheading-text: #f84;
+
+        --warning-border: red;
+        --warning-bg: hsla(40,100%,20%,0.95);
+        --warning-text: var(--text);
+
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
+        --def-border: #8ccbf2;
+        --def-bg: #080818;
+        --def-text: var(--text);
+        --defrow-border: #136;
+
+        --datacell-border: silver;
+
+        --indexinfo-text: #aaa;
+
+        --indextable-hover-text: var(--text);
+        --indextable-hover-bg: #181818;
+
+        --outdatedspec-bg: rgba(255, 255, 255, .5);
+        --outdatedspec-text: black;
+        --outdated-bg: maroon;
+        --outdated-text: white;
+        --outdated-shadow: red;
+
+        --editedrec-bg: darkorange;
+    }
+    /* In case a transparent-bg image doesn't expect to be on a dark bg,
+       which is quite common in practice... */
+    img { background: white; }
+}
+</style>
+<style>/* Boilerplate: style-counters */
 body {
     counter-reset: example figure issue;
 }
@@ -208,20 +328,25 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
-<style>/* style-dfn-panel */
-
+}
+</style>
+<style>/* Boilerplate: style-dfn-panel */
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
 }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}
 .dfn-panel {
     position: absolute;
     z-index: 35;
+    width: 20em;
+    width: 300px;
     height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
-    max-width: 300px;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -229,6 +354,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -236,8 +362,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -248,10 +381,9 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
-<style>/* style-issues */
-
+<style>/* Boilerplate: style-issues */
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -260,8 +392,7 @@ a[href].issue-return {
     text-decoration: none;
 }
 </style>
-<style>/* style-md-lists */
-
+<style>/* Boilerplate: style-md-lists */
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -269,8 +400,9 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
+}
+</style>
+<style>/* Boilerplate: style-selflinks */
 
 :root {
     --selflink-text: white;
@@ -297,6 +429,14 @@ a.self-link:hover {
 .heading > a.self-link {
     font-size: 83%;
 }
+.example > a.self-link,
+.note > a.self-link,
+.issue > a.self-link {
+    /* These blocks are overflow:auto, so positioning outside
+       doesn't work. */
+    left: auto;
+    right: 0;
+}
 li > a.self-link {
     left: calc(-1 * (3.5rem - 26px) - 2em);
 }
@@ -322,7 +462,7 @@ a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
 dfn > a.self-link::before      { content: "#"; }
 </style>
-<style>/* style-syntax-highlighting */
+<style>/* Boilerplate: style-syntax-highlighting */
 
 code.highlight { padding: .1em; border-radius: .3em; }
 pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
@@ -380,12 +520,76 @@ c-[vc] { color: #0077aa } /* Name.Variable.Class */
 c-[vg] { color: #0077aa } /* Name.Variable.Global */
 c-[vi] { color: #0077aa } /* Name.Variable.Instance */
 c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
+
+
+@media (prefers-color-scheme: dark) {
+    .highlight:not(.idl) { background: rgba(255, 255, 255, .05); }
+
+    c-[a] { color: #d33682 } /* Keyword.Declaration */
+    c-[b] { color: #d33682 } /* Keyword.Type */
+    c-[c] { color: #2aa198 } /* Comment */
+    c-[d] { color: #2aa198 } /* Comment.Multiline */
+    c-[e] { color: #268bd2 } /* Name.Attribute */
+    c-[f] { color: #b58900 } /* Name.Tag */
+    c-[g] { color: #cb4b16 } /* Name.Variable */
+    c-[k] { color: #d33682 } /* Keyword */
+    c-[l] { color: #657b83 } /* Literal */
+    c-[m] { color: #657b83 } /* Literal.Number */
+    c-[n] { color: #268bd2 } /* Name */
+    c-[o] { color: #657b83 } /* Operator */
+    c-[p] { color: #657b83 } /* Punctuation */
+    c-[s] { color: #6c71c4 } /* Literal.String */
+    c-[t] { color: #6c71c4 } /* Literal.String.Single */
+    c-[u] { color: #6c71c4 } /* Literal.String.Double */
+    c-[ch] { color: #2aa198 } /* Comment.Hashbang */
+    c-[cp] { color: #2aa198 } /* Comment.Preproc */
+    c-[cpf] { color: #2aa198 } /* Comment.PreprocFile */
+    c-[c1] { color: #2aa198 } /* Comment.Single */
+    c-[cs] { color: #2aa198 } /* Comment.Special */
+    c-[kc] { color: #d33682 } /* Keyword.Constant */
+    c-[kn] { color: #d33682 } /* Keyword.Namespace */
+    c-[kp] { color: #d33682 } /* Keyword.Pseudo */
+    c-[kr] { color: #d33682 } /* Keyword.Reserved */
+    c-[ld] { color: #657b83 } /* Literal.Date */
+    c-[nc] { color: #268bd2 } /* Name.Class */
+    c-[no] { color: #268bd2 } /* Name.Constant */
+    c-[nd] { color: #268bd2 } /* Name.Decorator */
+    c-[ni] { color: #268bd2 } /* Name.Entity */
+    c-[ne] { color: #268bd2 } /* Name.Exception */
+    c-[nf] { color: #268bd2 } /* Name.Function */
+    c-[nl] { color: #268bd2 } /* Name.Label */
+    c-[nn] { color: #268bd2 } /* Name.Namespace */
+    c-[py] { color: #268bd2 } /* Name.Property */
+    c-[ow] { color: #657b83 } /* Operator.Word */
+    c-[mb] { color: #657b83 } /* Literal.Number.Bin */
+    c-[mf] { color: #657b83 } /* Literal.Number.Float */
+    c-[mh] { color: #657b83 } /* Literal.Number.Hex */
+    c-[mi] { color: #657b83 } /* Literal.Number.Integer */
+    c-[mo] { color: #657b83 } /* Literal.Number.Oct */
+    c-[sa] { color: #6c71c4 } /* Literal.String.Affix */
+    c-[sb] { color: #6c71c4 } /* Literal.String.Backtick */
+    c-[sc] { color: #6c71c4 } /* Literal.String.Char */
+    c-[dl] { color: #6c71c4 } /* Literal.String.Delimiter */
+    c-[sd] { color: #6c71c4 } /* Literal.String.Doc */
+    c-[se] { color: #6c71c4 } /* Literal.String.Escape */
+    c-[sh] { color: #6c71c4 } /* Literal.String.Heredoc */
+    c-[si] { color: #6c71c4 } /* Literal.String.Interpol */
+    c-[sx] { color: #6c71c4 } /* Literal.String.Other */
+    c-[sr] { color: #6c71c4 } /* Literal.String.Regex */
+    c-[ss] { color: #6c71c4 } /* Literal.String.Symbol */
+    c-[fm] { color: #268bd2 } /* Name.Function.Magic */
+    c-[vc] { color: #cb4b16 } /* Name.Variable.Class */
+    c-[vg] { color: #cb4b16 } /* Name.Variable.Global */
+    c-[vi] { color: #cb4b16 } /* Name.Variable.Instance */
+    c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
+    c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
+}
 </style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Next-generation file formats (NGFF)</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-FINAL">Final Community Group Report</a>, <time class="dt-updated" datetime="2022-10-20">20 October 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-FINAL">Final Community Group Report</a>, <time class="dt-updated" datetime="2024-07-27">27 July 2024</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -403,7 +607,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     </div>
    </details>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright">Copyright © 2020-2022 <a href="https://www.openmicroscopy.org/"><abbr title="Open Microscopy Environment">OME</abbr></a><sup>®</sup> (<a href="https://dundee.ac.uk/"><abbr title="University of Dundee">U. Dundee</abbr></a>).
+   <p class="copyright" data-fill-with="copyright">Copyright © 2020-2024 <a href="https://www.openmicroscopy.org/"><abbr title="Open Microscopy Environment">OME</abbr></a><sup>®</sup> (<a href="https://dundee.ac.uk/"><abbr title="University of Dundee">U. Dundee</abbr></a>).
 OME trademark rules apply. </p>
    <hr title="Separator for header">
   </div>
@@ -460,7 +664,6 @@ will be provided between numbered versions. Data written with the latest version
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
       <li><a href="#w3c-conventions"><span class="secno"></span> <span class="content">Document conventions</span></a>
-      <li><a href="#w3c-conformant-algorithms"><span class="secno"></span> <span class="content">Conformant Algorithms</span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -508,8 +711,8 @@ of data by name rather than seeking through a large file is at the heart of
 parallelization.</p>
    <p>As a result, a number of formats have been developed more recently which provide
 the basic data structure of an HDF5 file, but do so in a more cloud-friendly way.
-In the <a href="https://pydata.org/">PyData</a> community, the Zarr <a data-link-type="biblio" href="#biblio-zarr">[zarr]</a> format was developed
-for easily storing collections of <a href="https://numpy.org/">NumPy</a> arrays. In the <a href="https://imagej.net/">ImageJ</a> community, N5 <a data-link-type="biblio" href="#biblio-n5">[n5]</a> was developed to work around
+In the <a href="https://pydata.org/">PyData</a> community, the Zarr <a data-link-type="biblio" href="#biblio-zarr" title="Zarr: An implementation of chunked, compressed, N-dimensional arrays for Python.">[zarr]</a> format was developed
+for easily storing collections of <a href="https://numpy.org/">NumPy</a> arrays. In the <a href="https://imagej.net/">ImageJ</a> community, N5 <a data-link-type="biblio" href="#biblio-n5" title="N5---a scalable Java API for hierarchies of chunked n-dimensional tensors and structured meta-data">[n5]</a> was developed to work around
 the limitations of HDF5 ("N5" was originally short for "Not-HDF5").
 Both of these formats permit storing individual chunks of data either locally in
 separate files or in cloud-based object stores as separate keys.</p>
@@ -523,7 +726,7 @@ that can be represented in <a href="http://www.openmicroscopy.org/ome-files/">OM
 binary containers. Eventually, we hope, the moniker "next-generation" will no longer be
 applicable, and this will simply be the most efficient, common, and useful representation
 of bioimaging data, whether during acquisition or sharing in the cloud.</p>
-   <p class="note" role="note"><span>Note:</span> The following text makes use of OME-Zarr <a data-link-type="biblio" href="#biblio-ome-zarr-py">[ome-zarr-py]</a>, the current prototype implementation,
+   <p class="note" role="note"><span class="marker">Note:</span> The following text makes use of OME-Zarr <a data-link-type="biblio" href="#biblio-ome-zarr-py" title="ome-zarr-py: Experimental implementation of next-generation file format (NGFF) specifications for storing bioimaging data in the cloud.">[ome-zarr-py]</a>, the current prototype implementation,
 for all examples.</p>
    <h3 class="heading settled" data-level="1.3" id="document-conventions"><span class="secno">1.3. </span><span class="content">Document conventions</span><a class="self-link" href="#document-conventions"></a></h3>
    <p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”,
@@ -533,7 +736,7 @@ intention of removing it in the future. Implementations may be expected (MUST) o
 encouraged (SHOULD) to support the reading of the data, but writing will usually
 be optional (MAY). Examples of transitional metadata include custom additions by
 implementations that are later submitted as a formal specification. (See <a href="#bf2raw">§ 3.2 "bioformats2raw.layout" (transitional)</a>) </p>
-   <p>Some of the JSON examples in this document include commments. However, these are only for
+   <p>Some of the JSON examples in this document include comments. However, these are only for
 clarity purposes and comments MUST NOT be included in JSON objects.</p>
    <h2 class="heading settled" data-level="2" id="on-disk"><span class="secno">2. </span><span class="content">On-disk (or in-cloud) layout</span><a class="self-link" href="#on-disk"></a></h2>
    <p>An overview of the layout of an OME-Zarr fileset should make
@@ -561,7 +764,7 @@ For this example we assume an image with 5 dimensions and axes called <code>t,c,
     ├── .zgroup               # Each image is a Zarr group, or a folder, of other groups and arrays.
     ├── .zattrs               # Group level attributes are stored in the .zattrs file and include
     │                         # "multiscales" and "omero" (see below). In addition, the group level attributes
-    │                         # must also contain "_ARRAY_DIMENSIONS" if this group directly contains multi-scale arrays.
+    │                         # may also contain "_ARRAY_DIMENSIONS" for compatibility with xarray if this group directly contains multi-scale arrays.
     │
     ├── 0                     # Each multiscale level is stored as a separate Zarr array,
     │   ...                   # which is a folder containing chunk files which compose the array.
@@ -837,7 +1040,7 @@ It SHOULD contain the field "metadata", which contains a dictionary with additio
                 <c- p>{</c->
                     <c- f>"path"</c-><c- p>:</c-> <c- u>"0"</c-><c- p>,</c->
                     <c- f>"coordinateTransformations"</c-><c- p>:</c-> <c- p>[{</c->
-                        // <c- kc>t</c->he voxel size <c- kc>f</c->or <c- kc>t</c->he <c- kc>f</c->irs<c- kc>t</c-> scale level (<c- mf>0.5</c-> microme<c- kc>ter</c->)
+                        <c- c1>// the voxel size for the first scale level (0.5 micrometer)</c->
                         <c- f>"type"</c-><c- p>:</c-> <c- u>"scale"</c-><c- p>,</c->
                         <c- f>"scale"</c-><c- p>:</c-> <c- p>[</c-><c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>0.5</c-><c- p>,</c-> <c- mf>0.5</c-><c- p>,</c-> <c- mf>0.5</c-><c- p>]</c->
                     <c- p>}]</c->
@@ -845,7 +1048,7 @@ It SHOULD contain the field "metadata", which contains a dictionary with additio
                 <c- p>{</c->
                     <c- f>"path"</c-><c- p>:</c-> <c- u>"1"</c-><c- p>,</c->
                     <c- f>"coordinateTransformations"</c-><c- p>:</c-> <c- p>[{</c->
-                        // <c- kc>t</c->he voxel size <c- kc>f</c->or <c- kc>t</c->he seco<c- kc>n</c->d scale level (dow<c- kc>ns</c->caled by a <c- kc>fa</c->c<c- kc>t</c->or o<c- kc>f</c-> <c- mi>2</c-> <c- mi>-</c->> <c- mi>1</c-> microme<c- kc>ter</c->)
+                        <c- c1>// the voxel size for the second scale level (downscaled by a factor of 2 -> 1 micrometer)</c->
                         <c- f>"type"</c-><c- p>:</c-> <c- u>"scale"</c-><c- p>,</c->
                         <c- f>"scale"</c-><c- p>:</c-> <c- p>[</c-><c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>]</c->
                     <c- p>}]</c->
@@ -853,14 +1056,14 @@ It SHOULD contain the field "metadata", which contains a dictionary with additio
                 <c- p>{</c->
                     <c- f>"path"</c-><c- p>:</c-> <c- u>"2"</c-><c- p>,</c->
                     <c- f>"coordinateTransformations"</c-><c- p>:</c-> <c- p>[{</c->
-                        // <c- kc>t</c->he voxel size <c- kc>f</c->or <c- kc>t</c->he <c- kc>t</c->hird scale level (dow<c- kc>ns</c->caled by a <c- kc>fa</c->c<c- kc>t</c->or o<c- kc>f</c-> <c- mi>4</c-> <c- mi>-</c->> <c- mi>2</c-> microme<c- kc>ter</c->)
+                        <c- c1>// the voxel size for the third scale level (downscaled by a factor of 4 -> 2 micrometer)</c->
                         <c- f>"type"</c-><c- p>:</c-> <c- u>"scale"</c-><c- p>,</c->
                         <c- f>"scale"</c-><c- p>:</c-> <c- p>[</c-><c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>2.0</c-><c- p>,</c-> <c- mf>2.0</c-><c- p>,</c-> <c- mf>2.0</c-><c- p>]</c->
                     <c- p>}]</c->
                 <c- p>}</c->
             <c- p>],</c->
             <c- f>"coordinateTransformations"</c-><c- p>:</c-> <c- p>[{</c->
-                // <c- kc>t</c->he <c- kc>t</c->ime u<c- kc>n</c->i<c- kc>t</c-> (<c- mf>0.1</c-> milliseco<c- kc>n</c->ds)<c- p>,</c-> which is <c- kc>t</c->he same <c- kc>f</c->or each scale level
+                <c- c1>// the time unit (0.1 milliseconds), which is the same for each scale level</c->
                 <c- f>"type"</c-><c- p>:</c-> <c- u>"scale"</c-><c- p>,</c->
                 <c- f>"scale"</c-><c- p>:</c-> <c- p>[</c-><c- mf>0.1</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>,</c-> <c- mf>1.0</c-><c- p>]</c->
             <c- p>}],</c->
@@ -916,6 +1119,11 @@ can be found under the "omero" key in the group-level metadata:</p>
 </pre>
    <p>See https://docs.openmicroscopy.org/omero/5.6.1/developers/Web/WebGateway.html#imgdata
 for more information.</p>
+   <p>The "omero" metadata is optional, but if present it MUST contain the field "channels", which is an array of dictionaries describing the channels of the image.
+Each dictionary in "channels" MUST contain the field "color", which is a string of 6 hexadecimal digits specifying the color of the channel in RGB format.
+Each dictionary in "channels" MUST contain the field "window", which is a dictionary describing the windowing of the channel.
+The field "window" MUST contain the fields "min" and "max", which are the minimum and maximum values of the window, respectively. 
+It MUST also contain the fields "start" and "end", which are the start and end values of the window, respectively.</p>
    <h3 class="heading settled" data-level="3.6" id="labels-md"><span class="secno">3.6. </span><span class="content">"labels" metadata</span><a class="self-link" href="#labels-md"></a></h3>
    <p>The special group "labels" found under an image Zarr contains the key <code>labels</code> containing
 the paths to label objects which can be found underneath the group:</p>
@@ -1017,14 +1225,14 @@ contain only alphanumeric characters, MUST be case-sensitive, and MUST NOT be a 
 other <code>name</code> in the <code>rows</code> list. Care SHOULD be taken to avoid collisions on
 case-insensitive filesystems (e.g. avoid using both <code>Aa</code> and <code>aA</code>).</p>
    <p>The <code>plate</code> dictionary SHOULD contain a <code>version</code> key whose value MUST be a string specifying the
-version of the plate specificaton.</p>
+version of the plate specification.</p>
    <p>The <code>plate</code> dictionary MUST contain a <code>wells</code> key whose value MUST be a list of JSON objects
 defining the wells of the plate. Each well object MUST contain a <code>path</code> key whose value MUST
 be a string specifying the path to the well subgroup. The <code>path</code> MUST consist of a <code>name</code> in
 the <code>rows</code> list, a file separator (<code>/</code>), and a <code>name</code> from the <code>columns</code> list, in that order.
 The <code>path</code> MUST NOT contain additional leading or trailing directories.
 Each well object MUST contain both a <code>rowIndex</code> key whose value MUST be an integer identifying
-the index into the <code>rows</code> list and a <code>columnIndex</code> key whose value MUST be an integer indentifying
+the index into the <code>rows</code> list and a <code>columnIndex</code> key whose value MUST be an integer identifying
 the index into the <code>columns</code> list. <code>rowIndex</code> and <code>columnIndex</code> MUST be 0-based. The <code>rowIndex</code>, <code>columnIndex</code>, and <code>path</code> MUST all refer to the same row/column pair.</p>
    <p>For example the following JSON object defines a plate with two acquisitions and
 6 wells (2 rows and 3 columns), containing up to 2 fields of view per acquisition.</p>
@@ -1276,9 +1484,9 @@ were added before this was adopted, but they should be updated in due course.</p
    <p>All implementations prevent an equivalent representation of a dataset which can be downloaded or uploaded freely. An interactive
 version of this diagram is available from the <a href="https://downloads.openmicroscopy.org/presentations/2020/Dundee/Workshops/NGFF/zarr_diagram/">OME2020 Workshop</a>.
 Mouseover the blackboxes representing the implementations above to get a quick tip on how to use them.</p>
-   <p class="note" role="note"><span>Note:</span> If you would like to see your project listed, please open an issue or PR on the <a href="https://github.com/ome/ngff">ome/ngff</a> repository.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> If you would like to see your project listed, please open an issue or PR on the <a href="https://github.com/ome/ngff">ome/ngff</a> repository.</p>
    <h2 class="heading settled" data-level="6" id="citing"><span class="secno">6. </span><span class="content">Citing</span><a class="self-link" href="#citing"></a></h2>
-   <p><a href="https://ngff.openmicroscopy.org/0.4">Next-generation file format (NGFF) specifications for storing bioimaging data in the cloud.</a> J. Moore, <em>et al</em>. Editors. Open Microscopy Environment Consortium, 8 February 2022.
+   <p><a href="https://ngff.openmicroscopy.org/0.4">Next-generation file format (NGFF) specifications for storing bioimaging data in the cloud.</a> J. Moore, <em>et al</em>. Open Microscopy Environment Consortium, 8 February 2022.
 This edition of the specification is <a href="https://ngff.openmicroscopy.org/0.4/]">https://ngff.openmicroscopy.org/0.4/</a>.
 The latest edition is available at <a href="https://ngff.openmicroscopy.org/latest/">https://ngff.openmicroscopy.org/latest/</a>. <a href="https://doi.org/10.5281/zenodo.4282107">(doi:10.5281/zenodo.4282107)</a></p>
    <h2 class="heading settled" data-level="7" id="history"><span class="secno">7. </span><span class="content">Version History</span><a class="self-link" href="#history"></a></h2>
@@ -1343,7 +1551,7 @@ The latest edition is available at <a href="https://ngff.openmicroscopy.org/late
     However, for readability,
     these words do not appear in all uppercase letters in this specification. </p>
    <p>All of the text of this specification is normative
-    except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119">[RFC2119]</a> </p>
+    except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">[RFC2119]</a> </p>
    <p>Examples in this specification are introduced with the words “for example”
     or are set apart from the normative text
     with <code>class="example"</code>,
@@ -1357,20 +1565,6 @@ The latest edition is available at <a href="https://ngff.openmicroscopy.org/late
     with <code>class="note"</code>,
     like this: </p>
    <p class="note" role="note">Note, this is an informative note.</p>
-   <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
-   <p>Requirements phrased in the imperative as part of algorithms
-    (such as "strip any leading space characters"
-    or "return false and abort these steps")
-    are to be interpreted with the meaning of the key word
-    ("must", "should", "may", etc)
-    used in introducing the algorithm. </p>
-   <p>Conformance requirements phrased as algorithms or specific steps
-    can be implemented in any manner,
-    so long as the end result is equivalent.
-    In particular, the algorithms defined in this specification
-    are intended to be easy to understand
-    and are not intended to be performant.
-    Implementers are encouraged to optimize. </p>
   </div>
 <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1396,66 +1590,356 @@ The latest edition is available at <a href="https://ngff.openmicroscopy.org/late
    <dt id="biblio-zarr">[ZARR]
    <dd>Alistair Miles; et al. <a href="https://doi.org/10.5281/zenodo.4069231"><cite>Zarr: An implementation of chunked, compressed, N-dimensional arrays for Python.</cite></a>. 06 October 2020. Informational. URL: <a href="https://doi.org/10.5281/zenodo.4069231">https://doi.org/10.5281/zenodo.4069231</a>
   </dl>
-  <aside class="dfn-panel" data-for="transitional">
-   <b><a href="#transitional">#transitional</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transitional">3.2. "bioformats2raw.layout" (transitional)</a>
-    <li><a href="#ref-for-transitional①">3.5. "omero" metadata (transitional)</a>
-   </ul>
-  </aside>
-<script>/* script-dfn-panel */
+<script>/* Boilerplate: script-dfn-panel */
+"use strict";
+{
+    const dfnsJson = window.dfnsJson || {};
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
             }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
         }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
     }
 
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
+
+    function hideAllDfnPanels() {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
+    }
+
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn, dfnPanel) {
+        // Find dfn panel
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        });
+
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
+                pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        })
+    }
+}
+</script>
+<script>/* Boilerplate: script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['transitional'] = {"dfnID": "transitional", "url": "#transitional", "dfnText": "Transitional", "refSections": [{"refs": [{"id": "ref-for-transitional"}], "title": "3.2. \"bioformats2raw.layout\" (transitional)"}, {"refs": [{"id": "ref-for-transitional\u2460"}], "title": "3.5. \"omero\" metadata (transitional)"}], "external": false};
+</script>
+<script>/* Boilerplate: script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
 });
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}
 </script>
